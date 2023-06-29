@@ -15,8 +15,7 @@ def createDriver() -> webdriver.Chrome:
 
 
     chrome_options.add_experimental_option("prefs", prefs)
-    chrome_option.add_argument("--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\")
-    chrome_option.add_argument("--profile-directory=Profile 1")
+
     myDriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     return myDriver
