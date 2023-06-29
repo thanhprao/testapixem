@@ -3,12 +3,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from flask import Flask, render_template , request
 
-with open("C:\\Py\\dist\\Chrome.txt",encoding="utf") as f1:
-    a1= f1.read()
-with open("C:\\Py\\dist\\Profile.txt",encoding="utf") as f2:
-    a2= f2.read()    
-accounts = a1
-profile = a2
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
@@ -21,8 +15,8 @@ def createDriver() -> webdriver.Chrome:
 
 
     chrome_options.add_experimental_option("prefs", prefs)
-    chrome_option.add_argument("--user-data-dir="+accounts)
-    chrome_option.add_argument("--profile-directory="+profile)
+    chrome_option.add_argument("--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\")
+    chrome_option.add_argument("--profile-directory=Profile 1")
     myDriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     return myDriver
