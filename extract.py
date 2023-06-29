@@ -18,7 +18,7 @@ def createDriver() -> webdriver.Chrome:
     return myDriver
 
 def getGoogleHomepage(driver: webdriver.Chrome) -> str:
-    driver.get("https://www.google.com")
+    return driver.get("https://www.google.com")
     
 
 def doBackgroundTask(inp):
