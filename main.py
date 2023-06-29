@@ -16,17 +16,16 @@ class Msg(BaseModel):
 @app.get("/")
 
 async def root():
-    driver=createDriver()
-    getGoogleHomepage(driver)
-    driver.close()
+    return {"message": "Hello World. Welcome to FastAPI!"}
 
 
 @app.get("/homepage")
 async def demo_get():
     driver=createDriver()
-    getGoogleHomepage(driver)
-    driver.close()
 
+    homepage = getGoogleHomepage(driver)
+    driver.close()
+    return homepage
 
 @app.post("/backgroundDemo")
 async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
