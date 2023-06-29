@@ -3,6 +3,12 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from flask import Flask, render_template , request
 
+with open("C:\\Py\\dist\\Chrome.txt",encoding="utf") as f1:
+    a1= f1.read()
+with open("C:\\Py\\dist\\Profile.txt",encoding="utf") as f2:
+    a2= f2.read()    
+accounts = a1
+profile = a2
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
@@ -15,13 +21,15 @@ def createDriver() -> webdriver.Chrome:
 
 
     chrome_options.add_experimental_option("prefs", prefs)
+    chrome_option.add_argument("--user-data-dir="+accounts)
+    chrome_option.add_argument("--profile-directory="+profile)
     myDriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     return myDriver
 
 def getGoogleHomepage(driver: webdriver.Chrome) -> str:
-    driver.get("https://www.google.com")
-    return driver.page_source
+    checkweb = driver.get("https://www.google.com")
+    return checkweb
 
 def doBackgroundTask(inp):
     print("Doing background task")
