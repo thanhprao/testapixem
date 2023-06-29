@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from flask import Flask, render_template , request
+
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
