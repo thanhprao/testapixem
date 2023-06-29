@@ -16,13 +16,14 @@ class Msg(BaseModel):
 @app.get("/")
 
 async def root():
-    return {"message": "Hello World. Welcome to FastAPI!"}
+    driver=createDriver()
+    getGoogleHomepage(driver)
+    driver.close()
 
 
 @app.get("/homepage")
 async def demo_get():
     driver=createDriver()
-
     getGoogleHomepage(driver)
     driver.close()
 
