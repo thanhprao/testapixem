@@ -4,9 +4,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument("--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\")
+    chrome_options.add_argument("--profile-directory=Profile 1")
     
     prefs = {"profile.managed_default_content_settings.images":2}
     chrome_options.headless = True
