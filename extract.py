@@ -18,9 +18,12 @@ def createDriver() -> webdriver.Chrome:
     return myDriver
 
 def getGoogleHomepage(driver: webdriver.Chrome):
-    driver.get("https://www.24h.com.vn")
-    return driver.current_url()
-
+    driver.get("https://www.kenh14.vn")
+    elem = driver.find_element(By.XPATH,'//*[@id="searchinput"]')
+    elem.send_keys("ca2")
+    searchButton= driver.find_element(By.XPATH,'//*[@id="contact_form"]/div/button')
+    searchButton.click()
+    
 def doBackgroundTask(inp):
     print("Doing background task")
     print(inp.msg)
