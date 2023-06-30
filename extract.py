@@ -35,9 +35,11 @@ def createDriver() -> webdriver.Chrome:
     return myDriver
 
 def getGoogleHomepage(driver: webdriver.Chrome):
-    driver.get("https://myaccount.google.com/?hl=en&utm_source=OGB&utm_medium=act")
-    elem = driver.find_element(By.XPATH,'/html/body/c-wiz/div/div[2]/div/c-wiz/c-wiz/div/div[3]/div/div/header/h1')
-    print(elem.text)
+    driver.get("https://gmail.com")
+    elem = driver.find_element(By.XPATH,'/html/body/div[7]/div[3]/div/div[1]/div[3]/header/div[2]/div[3]/div[1]/div[2]/div/a/img')
+    elem.click()
+    find = driver.find_element(By.XPATH,'/html/body/div[1]/c-wiz/div[2]/div/div/div/div/div/div[1]/c-wiz/div/div[1]/div[1]/div[2]/div[1]')
+    print(find.text)
     print("mãi yêu")
     send_msg("Có task ở máy: lỏ rồi")
     
