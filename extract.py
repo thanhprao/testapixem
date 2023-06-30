@@ -21,7 +21,7 @@ def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--user-data-dir="+link_profile)
     chrome_options.add_argument("--profile-directory="+profile)
-    chrome_options.add_argument("--headless")
+    
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     
