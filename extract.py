@@ -36,8 +36,8 @@ def createDriver() -> webdriver.Chrome:
 
 def getGoogleHomepage(driver: webdriver.Chrome):
     driver.get("https://gmail.com")
-    if(driver.find_element(By.XPATH,'/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div/div')):
-        print("Đã vào đc mail")
+    if(driver.find_element(By.XPATH,'//*[@id="identifierId"]')):
+        print("Rớt đăng nhập cha r")
     else:
         print("Dell vào đc mail")
     print("mãi yêu")
