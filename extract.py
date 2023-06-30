@@ -19,7 +19,7 @@ profile = "Profile 1"
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument("--user-data-dir="+accounts)
+    chrome_options.add_argument("--user-data-dir="+link_profile)
     chrome_options.add_argument("--profile-directory="+profile)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
