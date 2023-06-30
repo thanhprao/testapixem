@@ -13,11 +13,14 @@ def send_msg(text):
     url_req = "https://api.telegram.org/bot"+token+"/sendMessage"+"?chat_id=" + chat_id + "&text="+text
     results = requests.get(url_req)
     return results.json()
-
+    
+link_profile = "C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\"
+profile = "Profile 1"
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
-    
+    chrome_option.add_argument("--user-data-dir="+accounts)
+    chrome_option.add_argument("--profile-directory="+profile)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
