@@ -7,6 +7,14 @@ import winsound
 frequency = 800
 duration = 15000
 
+token = "6240340749:AAGafHc3cj6bVPFfahbXlqKApn1FNFFhTxA"
+chat_id = "6292735293"
+def send_msg(text):
+    url_req = "https://api.telegram.org/bot"+token+"/sendMessage"+"?chat_id=" + chat_id + "&text="+text
+    results = requests.get(url_req)
+    return results.json()
+
+
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
     
@@ -30,7 +38,7 @@ def getGoogleHomepage(driver: webdriver.Chrome):
     searchButton= driver.find_element(By.XPATH,'/html/body/form/div[2]/div[2]/div[1]/div/div/a/span')
     searchButton.click()
     print("mãi yêu")
-    winsound.Beep(frequency,duration)
+    send_msg("Có task ở máy: "+ name_server.get())
     
 def doBackgroundTask(inp):
     print("Doing background task")
