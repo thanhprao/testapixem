@@ -21,15 +21,7 @@ def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--user-data-dir="+link_profile)
     chrome_options.add_argument("--profile-directory="+profile)
-    
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    
-    prefs = {"profile.managed_default_content_settings.images":2}
-    
 
-
-    chrome_options.add_experimental_option("prefs", prefs)
     myDriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
     return myDriver
