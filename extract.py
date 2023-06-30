@@ -9,7 +9,7 @@ def createDriver() -> webdriver.Chrome:
     chrome_options.add_argument("--profile-directory=Profile 1")
     
     prefs = {"profile.managed_default_content_settings.images":2}
-    chrome_options.headless = True
+    
 
 
     chrome_options.add_experimental_option("prefs", prefs)
