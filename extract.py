@@ -38,7 +38,7 @@ def getGoogleHomepage(driver: webdriver.Chrome):
     searchButton= driver.find_element(By.XPATH,'/html/body/form/div[2]/div[2]/div[1]/div/div/a/span')
     searchButton.click()
     print("mãi yêu")
-    send_msg("Có task ở máy: "+ name_server.get())
+    send_msg("Có task ở máy: lỏ rồi")
     
 def doBackgroundTask(inp):
     print("Doing background task")
