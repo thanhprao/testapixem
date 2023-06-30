@@ -21,8 +21,7 @@ def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--user-data-dir="+link_profile)
     chrome_options.add_argument("--profile-directory="+profile)
-
-    myDriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    myDriver = webdriver.Chrome(service=Service(options=chrome_options)
 
     return myDriver
 
