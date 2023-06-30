@@ -2,6 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+import winsound
+
+frequency = 800
+duration = 15000
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
@@ -26,6 +30,7 @@ def getGoogleHomepage(driver: webdriver.Chrome):
     searchButton= driver.find_element(By.XPATH,'/html/body/form/div[2]/div[2]/div[1]/div/div/a/span')
     searchButton.click()
     print("mãi yêu")
+    winsound.Beep(frequency,duration)
     
 def doBackgroundTask(inp):
     print("Doing background task")
