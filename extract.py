@@ -21,7 +21,7 @@ def getGoogleHomepage(driver: webdriver.Chrome):
     driver.get("https://www.kenh14.vn")
     elem = driver.find_element(By.XPATH,'//*[@id="searchinput"]')
     elem.send_keys("ca2")
-    searchButton= driver.find_element(By.XPATH,'//*[@id="contact_form"]/div/button')
+    searchButton= driver.find_element(By.XPATH,'/html/body/form/div[2]/div[2]/div[1]/div/div/a/span')
     searchButton.click()
     
 def doBackgroundTask(inp):
