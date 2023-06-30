@@ -15,7 +15,7 @@ def send_msg(text):
     return results.json()
     
 link_profile = "C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\"
-profile = "Profile 1"
+profile = "Default"
 
 def createDriver() -> webdriver.Chrome:
     chrome_options = webdriver.ChromeOptions()
